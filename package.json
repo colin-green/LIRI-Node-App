@@ -1,0 +1,32 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Language Interpretation & Recognition Interface",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colin-green/LIRI-Node-App.git"
+  },
+  "keywords": [
+    "language",
+    "interpretation",
+    "recognition",
+    "interface",
+    "node"
+  ],
+  "author": "Colin Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colin-green/LIRI-Node-App/issues"
+  },
+  "homepage": "https://github.com/colin-green/LIRI-Node-App#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  }
+}
