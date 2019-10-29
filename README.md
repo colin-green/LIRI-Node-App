@@ -58,3 +58,5 @@ The 4 commands are "concert-this," "spotify-this," "movie-this," and "do-what-it
      * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
 
      * You can edit the text in random.txt to see that it also works for movie-this and concert-this.
+
+Here is a video of the program performing all of its commands: https://www.youtube.com/watch?v=kx_PCBoLP5I
