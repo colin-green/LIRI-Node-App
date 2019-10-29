@@ -36,23 +36,23 @@ function concertThis() {
             if (data == '') {
 
                 console.log(`No upcoming events found for ${userInput}.`);
-                fs.appendFile("log.txt", `No upcoming events found for ${userInput}.\n\n`, function(err){});
+                fs.appendFileSync("log.txt", `No upcoming events found for ${userInput}.\n\n`, function(err){});
                 
             } else {
 
                 console.log(`Showing upcoming events for ${userInput}:\n`);
-                fs.appendFile("log.txt", `Showing upcoming events for ${userInput}:\n\n`, function(err){});
+                fs.appendFileSync("log.txt", `Showing upcoming events for ${userInput}:\n\n`, function(err){});
 
                 for (let i = 0; i < data.length; i++) {
                     
                     console.log(`Venue: ${data[i].venue.name}`);
-                    fs.appendFile("log.txt", `Venue: ${data[i].venue.name}\n`, function(err){});
+                    fs.appendFileSync("log.txt", `Venue: ${data[i].venue.name}\n`, function(err){});
 
                     console.log(`Location: ${data[i].venue.city}, ${data[i].venue.country}`);
-                    fs.appendFile("log.txt", `Location: ${data[i].venue.city}, ${data[i].venue.country}\n`, function(err){});
+                    fs.appendFileSync("log.txt", `Location: ${data[i].venue.city}, ${data[i].venue.country}\n`, function(err){});
 
                     console.log(`Date: ${moment(data[i].datetime).format('MM/DD/YYYY')}\n`);
-                    fs.appendFile("log.txt", `Date: ${moment(data[i].datetime).format('MM/DD/YYYY')}\n\n`, function(err){});
+                    fs.appendFileSync("log.txt", `Date: ${moment(data[i].datetime).format('MM/DD/YYYY')}\n\n`, function(err){});
                     
                 }
 
@@ -67,7 +67,7 @@ function spotifyThis() {
     if (userInput == '') {
         userInput = "The Sign Ace of Base";
         console.log("No song was provided. Defaulting to 'The Sign' by Ace of Base.\n");
-        fs.appendFile("log.txt", "No song was provided. Defaulting to 'The Sign' by Ace of Base.\n\n", function(err){});
+        fs.appendFileSync("log.txt", "No song was provided. Defaulting to 'The Sign' by Ace of Base.\n\n", function(err){});
     }
 
     spotify.search({
@@ -80,16 +80,16 @@ function spotifyThis() {
           }
          
         console.log(`Artist: ${response.tracks.items[0].artists[0].name}`);
-        fs.appendFile("log.txt", `Artist: ${response.tracks.items[0].artists[0].name}\n`, function(err){});
+        fs.appendFileSync("log.txt", `Artist: ${response.tracks.items[0].artists[0].name}\n`, function(err){});
 
         console.log(`Song: ${response.tracks.items[0].name}`);
-        fs.appendFile("log.txt", `Song: ${response.tracks.items[0].name}\n`, function(err){});
+        fs.appendFileSync("log.txt", `Song: ${response.tracks.items[0].name}\n`, function(err){});
 
         console.log(`Album: ${response.tracks.items[0].album.name}`);
-        fs.appendFile("log.txt", `Album: ${response.tracks.items[0].album.name}\n`, function(err){});
+        fs.appendFileSync("log.txt", `Album: ${response.tracks.items[0].album.name}\n`, function(err){});
 
         console.log(`Preview Link: ${response.tracks.items[0].external_urls.spotify}`)
-        fs.appendFile("log.txt", `Preview Link: ${response.tracks.items[0].external_urls.spotify}\n\n`, function(err){});
+        fs.appendFileSync("log.txt", `Preview Link: ${response.tracks.items[0].external_urls.spotify}\n\n`, function(err){});
 
     })
 
@@ -100,7 +100,7 @@ function movieThis() {
     if (userInput == '') {
         userInput = "Mr. Nobody"
         console.log("No movie was provided. Defaulting to 'Mr. Nobody.'\n");
-        fs.appendFile("log.txt", "No movie was provided. Defaulting to 'Mr. Nobody.'\n\n", function(err){});
+        fs.appendFileSync("log.txt", "No movie was provided. Defaulting to 'Mr. Nobody.'\n\n", function(err){});
     }
 
     var omdbURL = `http://www.omdbapi.com/?t=${userInput}&plot=short&apikey=trilogy`
@@ -109,28 +109,28 @@ function movieThis() {
         .then(function(response) {
 
             console.log(`Title: ${response.data.Title}`);
-            fs.appendFile("log.txt", `Title: ${response.data.Title}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Title: ${response.data.Title}\n`, function(err){});
 
             console.log(`Year: ${response.data.Year}`);
-            fs.appendFile("log.txt", `Year: ${response.data.Year}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Year: ${response.data.Year}\n`, function(err){});
 
             console.log(`IMDB Rating: ${response.data.Ratings[0].Value}`);
-            fs.appendFile("log.txt", `IMDB Rating: ${response.data.Ratings[0].Value}\n`, function(err){});
+            fs.appendFileSync("log.txt", `IMDB Rating: ${response.data.Ratings[0].Value}\n`, function(err){});
 
             console.log(`Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}`);
-            fs.appendFile("log.txt", `Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}\n`, function(err){});
 
             console.log(`Country: ${response.data.Country}`);
-            fs.appendFile("log.txt", `Country: ${response.data.Country}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Country: ${response.data.Country}\n`, function(err){});
 
             console.log(`Language: ${response.data.Language}`);
-            fs.appendFile("log.txt", `Language: ${response.data.Language}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Language: ${response.data.Language}\n`, function(err){});
 
             console.log(`Synopsis: ${response.data.Plot}`);
-            fs.appendFile("log.txt", `Synopsis: ${response.data.Plot}\n`, function(err){});
+            fs.appendFileSync("log.txt", `Synopsis: ${response.data.Plot}\n`, function(err){});
 
             console.log(`Actors: ${response.data.Actors}`);
-            fs.appendFile("log.txt", `Actors: ${response.data.Actors}\n\n`, function(err){});
+            fs.appendFileSync("log.txt", `Actors: ${response.data.Actors}\n\n`, function(err){});
 
         })
         .catch(function(error) {
