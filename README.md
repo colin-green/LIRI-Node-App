@@ -2,6 +2,8 @@
 
 LIRI stands for "Language Interpretation & Recognition Interface" and has 4 commands that allow users to get information on artists, songs, and movies.
 
+To get started, clone the repository and run "npm install" in the directory (you'll need node.js installed).
+
 The 4 commands are "concert-this," "spotify-this," "movie-this," and "do-what-it-says." I will give a run down of how each command works.
 
 1. `node liri.js concert-this <artist/band name here>`
