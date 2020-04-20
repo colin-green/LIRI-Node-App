@@ -1,4 +1,4 @@
-# LIRI-Node-App
+# LIRI Node App
 
 LIRI stands for "Language Interpretation & Recognition Interface" and has 4 commands that allow users to get information on artists, songs, and movies.
 
